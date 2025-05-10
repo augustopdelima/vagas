@@ -1,0 +1,18 @@
+{% extends 'vaga_candidato/base.html' %}
+
+{% block title %}Detalhes do Candidato{% endblock %}
+
+{% block content %}
+<h2>Detalhes do Candidato</h2>
+
+<ul>
+    <li><strong>Nome:</strong> {{ candidato.nome }} {{ candidato.sobrenome }}</li>
+    <li><strong>Data de Nascimento:</strong> {{ candidato.data_nascimento }}</li>
+    <li><strong>Gênero:</strong> {{ candidato.get_genero_display }}</li>
+    <li><strong>Email:</strong> {{ candidato.email }}</li>
+    <li><strong>Telefone:</strong> {{ candidato.telefone }}</li>
+    <li><strong>Escolaridade:</strong> {{ candidato.get_escolaridade_display }}</li>
+</ul>
+
+<a href="{% url 'lista_candidatos' %}">← Voltar para a lista de candidatos</a>
+{% endblock %}

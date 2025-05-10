@@ -1,0 +1,25 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidaturas</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css'  %}"
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{% url 'lista_candidatos' %}">Lista Candidatos</a>
+            <a href="{% url 'nova_vaga' %}">Cadastrar Nova Vaga</a>
+            <a href="{% url 'novo_candidato' %}">Cadastrar Novo Candidato</a>
+        </nav>
+    </header>
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

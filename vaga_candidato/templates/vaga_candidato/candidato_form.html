@@ -1,0 +1,16 @@
+{% extends 'vaga_candidato/base.html' %}
+
+
+{% block content %}
+
+<h2>Cadastro de Candidato</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Cadastrar Candidato</button>
+</form>
+
+<a href="{% url 'lista_candidatos' %}">← Voltar para a lista de candidatos</a>
+
+{% endblock %}

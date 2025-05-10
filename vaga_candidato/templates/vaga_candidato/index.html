@@ -1,0 +1,36 @@
+{%  extends "vaga_candidato/base.html"%}
+
+{% block content  %}
+
+<h2>Lista de Candidatos</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Vaga</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for candidato in candidatos %}
+        <tr>
+            <td>
+                <a href="{% url 'candidato_detalhe' candidato.id %}">
+                    {{ candidato.nome }} {{ candidato.sobrenome }}
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'vaga_detalhe' candidato.vaga.id %}">
+                    {{ candidato.vaga.titulo }}
+                </a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="4">Nenhum candidato cadastrado ainda.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table> 
+
+{% endblock %}

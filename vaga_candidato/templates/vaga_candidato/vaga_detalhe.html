@@ -1,0 +1,15 @@
+{% extends 'vaga_candidato/base.html' %}
+
+
+{% block content %}
+<h2>Detalhes da Vaga</h2>
+
+<ul>
+    <li><strong>Título:</strong> {{ vaga.titulo }}</li>
+    <li><strong>Área:</strong> {{ vaga.get_area_display }}</li>
+    <li><strong>Tipo de Contrato:</strong> {{ vaga.get_tipo_contrato_display }}</li>
+    <li><strong>Descrição:</strong> {{ vaga.descricao }}</li>
+</ul>
+
+<a href="{% url 'lista_candidatos' %}">← Voltar para a lista de candidatos</a>
+{% endblock %}
